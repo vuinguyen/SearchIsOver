@@ -16,7 +16,7 @@ struct ContentView: View {
             CheckboxView(isChecked: false, title: "Chocolate")
             CheckboxView(isChecked: false, title: "Coffee")
             CheckboxView(isChecked: false, title: "Fruit")
-            CheckboxView(isChecked: false, title: "None of Above")
+            CheckboxView(isChecked: false, title: "None of the Above")
 
             List(flavorList) { flavor in
                 Text(flavor.name)

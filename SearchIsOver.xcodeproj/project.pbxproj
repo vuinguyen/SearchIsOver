@@ -11,6 +11,8 @@
 		528A97F726E115CF00916883 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A97F626E115CF00916883 /* ContentView.swift */; };
 		528A97F926E115D000916883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528A97F826E115D000916883 /* Assets.xcassets */; };
 		528A97FC26E115D000916883 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528A97FB26E115D000916883 /* Preview Assets.xcassets */; };
+		528A980526E13C8000916883 /* IceCreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A980426E13C8000916883 /* IceCreamViewModel.swift */; };
+		528A980826E14EE400916883 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A980726E14EE400916883 /* CheckboxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		528A97F826E115D000916883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		528A97FB26E115D000916883 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		528A97FD26E115D000916883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		528A980426E13C8000916883 /* IceCreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCreamViewModel.swift; sourceTree = "<group>"; };
+		528A980726E14EE400916883 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +56,9 @@
 		528A97F326E115CF00916883 /* SearchIsOver */ = {
 			isa = PBXGroup;
 			children = (
+				528A980626E13CC100916883 /* Views */,
+				528A980326E13BC700916883 /* ViewModels */,
 				528A97F426E115CF00916883 /* SearchIsOverApp.swift */,
-				528A97F626E115CF00916883 /* ContentView.swift */,
 				528A97F826E115D000916883 /* Assets.xcassets */,
 				528A97FD26E115D000916883 /* Info.plist */,
 				528A97FA26E115D000916883 /* Preview Content */,
@@ -67,6 +72,23 @@
 				528A97FB26E115D000916883 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		528A980326E13BC700916883 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				528A980426E13C8000916883 /* IceCreamViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		528A980626E13CC100916883 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				528A97F626E115CF00916883 /* ContentView.swift */,
+				528A980726E14EE400916883 /* CheckboxView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				528A97F726E115CF00916883 /* ContentView.swift in Sources */,
+				528A980526E13C8000916883 /* IceCreamViewModel.swift in Sources */,
 				528A97F526E115CF00916883 /* SearchIsOverApp.swift in Sources */,
+				528A980826E14EE400916883 /* CheckboxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

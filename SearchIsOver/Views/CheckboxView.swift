@@ -4,6 +4,8 @@
 //
 //  Created by Vui Nguyen on 9/2/21.
 //
+//  Credit for checkbox view goes to:
+//  https://makeapppie.com/2019/10/16/checkboxes-in-swiftui/
 
 import SwiftUI
 

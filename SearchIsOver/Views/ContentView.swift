@@ -13,11 +13,7 @@ struct ContentView: View {
         // .padding()
         let flavorList = FlavorViewModel().flavors
         VStack(alignment: .leading) {
-            CheckboxView(isChecked: false, title: "Chocolate")
-            CheckboxView(isChecked: false, title: "Coffee")
-            CheckboxView(isChecked: false, title: "Fruit")
-            CheckboxView(isChecked: false, title: "None of the Above")
-
+            FilterView()
             List(flavorList) { flavor in
                 Text(flavor.name)
             }

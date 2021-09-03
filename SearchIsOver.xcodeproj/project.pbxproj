@@ -13,6 +13,8 @@
 		528A97FC26E115D000916883 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528A97FB26E115D000916883 /* Preview Assets.xcassets */; };
 		528A980526E13C8000916883 /* FlavorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A980426E13C8000916883 /* FlavorViewModel.swift */; };
 		528A980826E14EE400916883 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A980726E14EE400916883 /* CheckboxView.swift */; };
+		528A980C26E2BF0000916883 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A980B26E2BF0000916883 /* FilterView.swift */; };
+		528A980E26E2C03300916883 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528A980D26E2C03300916883 /* FilterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		528A97FD26E115D000916883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528A980426E13C8000916883 /* FlavorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorViewModel.swift; sourceTree = "<group>"; };
 		528A980726E14EE400916883 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
+		528A980B26E2BF0000916883 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		528A980D26E2C03300916883 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				528A980426E13C8000916883 /* FlavorViewModel.swift */,
+				528A980D26E2C03300916883 /* FilterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			children = (
 				528A97F626E115CF00916883 /* ContentView.swift */,
 				528A980726E14EE400916883 /* CheckboxView.swift */,
+				528A980B26E2BF0000916883 /* FilterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +169,8 @@
 				528A97F726E115CF00916883 /* ContentView.swift in Sources */,
 				528A980526E13C8000916883 /* FlavorViewModel.swift in Sources */,
 				528A97F526E115CF00916883 /* SearchIsOverApp.swift in Sources */,
+				528A980C26E2BF0000916883 /* FilterView.swift in Sources */,
+				528A980E26E2C03300916883 /* FilterViewModel.swift in Sources */,
 				528A980826E14EE400916883 /* CheckboxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

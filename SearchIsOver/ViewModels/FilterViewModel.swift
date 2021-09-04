@@ -30,5 +30,44 @@ enum FlavorFilter: printEnum {
 }
 
 class FilterViewModel: ObservableObject {
-    
+    var filterSelected = Set<FlavorFilter>()
+
+    func chocolateFilterSelected() {
+        if filterSelected.contains(FlavorFilter.chocolate) == false {
+            filterSelected.insert(FlavorFilter.chocolate)
+        }
+    }
+
+    func coffeeFilterSelected() {
+
+    }
+
+    func fruitFilterSelected() {
+
+    }
+
+    func filterSelected(filterToCheck: FlavorFilter) {
+        /*
+        if filterSelected.contains(filterToCheck) == false {
+            filterSelected.insert(filterToCheck)
+        }
+ */
+        filterSelected.insert(filterToCheck)
+        doFiltering()
+    }
+
+    func filterDeselected(filterToCheck: FlavorFilter) {
+        // or use Sets?
+        /*
+        if filterSelected.contains(filterToCheck) {
+            filterSelected.remove(filterToCheck)
+        }
+    */
+        filterSelected.remove(filterToCheck)
+        doFiltering()
+    }
+
+    func doFiltering(){
+
+    }
 }

@@ -7,15 +7,15 @@
 
 import Foundation
 
-
-struct FlavorItem: Identifiable {
+// Note: Hashable is needed in order to make a Set of FlavorItem
+struct FlavorItem: Identifiable, Hashable {
     var id: Int
     var name: String
     var tags: [String] // this can be an array of enums later
 }
 
 class FlavorViewModel {
-    var flavors: [FlavorItem] = [
+    let flavors: [FlavorItem] = [
         FlavorItem(id: 0, name: "Vanilla", tags: []),
         FlavorItem(id: 1, name: "Chocolate", tags: []),
         FlavorItem(id: 2, name: "Strawberry", tags: []),

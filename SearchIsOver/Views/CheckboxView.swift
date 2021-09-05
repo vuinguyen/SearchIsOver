@@ -10,8 +10,9 @@
 import SwiftUI
 
 struct CheckboxView: View {
+    
     @State var isChecked:Bool = true
-    var title:String
+    var flavorFilter: FlavorFilter
     func toggle() {
         isChecked = !isChecked
     }
@@ -19,7 +20,7 @@ struct CheckboxView: View {
         Button(action: toggle){
             HStack{
                 Image(systemName: isChecked ? "checkmark.square": "square")
-                Text(title)
+                Text(flavorFilter.description)
             }
         }
     }
@@ -27,6 +28,6 @@ struct CheckboxView: View {
 
 struct CheckboxView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckboxView(title: "Chocolate")
+        CheckboxView(isChecked: true, flavorFilter: FlavorFilter.chocolate)
     }
 }

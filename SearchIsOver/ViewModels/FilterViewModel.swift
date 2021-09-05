@@ -30,6 +30,7 @@ enum FlavorFilter: printEnum {
 }
 
 class FilterViewModel: ObservableObject {
+    @Published var filteredListResults = Set<FlavorItem>()
     var filterSelected = Set<FlavorFilter>()
 
     func chocolateFilterSelected() {
@@ -67,7 +68,18 @@ class FilterViewModel: ObservableObject {
         doFiltering()
     }
 
-    func doFiltering(){
+    func checkFilter(filterToCheck: FlavorFilter, isChecked: Bool) {
+        if isChecked {
+            filterSelected.insert(filterToCheck)
+        } else {
+            filterSelected.remove(filterToCheck)
+        }
+        doFiltering()
+    }
 
+    func doFiltering(){
+        // set list results, which should be a published entity
+        // list results should be a subset of all the flavors in the flavorViewModel list that match the
+        // filter set criteria
     }
 }

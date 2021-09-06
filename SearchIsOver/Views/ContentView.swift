@@ -11,7 +11,8 @@ struct ContentView: View {
     var body: some View {
         //Text("Hello, world!")
         // .padding()
-        let flavorList = FlavorViewModel().flavors
+        // TODO: Pass FilterViewModel into here
+        let flavorList = FlavorViewModel().allFlavors()
         VStack(alignment: .leading) {
             FilterView()
             List(flavorList) { flavor in

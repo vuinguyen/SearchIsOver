@@ -30,7 +30,7 @@ enum FlavorFilter: printEnum {
 }
 
 class FilterViewModel: ObservableObject {
-    @Published var filteredListResults = Set<FlavorItem>()
+    @Published var filteredListResults: [FlavorItem] = []
     var filterSelected = Set<FlavorFilter>()
 
     func chocolateFilterSelected() {

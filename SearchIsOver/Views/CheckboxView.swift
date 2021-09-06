@@ -10,8 +10,8 @@
 import SwiftUI
 
 struct CheckboxView: View {
-    
-    @State var isChecked:Bool = true
+    // TODO: Pass FilterViewModel into here
+    @State var isChecked:Bool = false
     var flavorFilter: FlavorFilter
     func toggle() {
         isChecked = !isChecked

@@ -30,12 +30,17 @@ enum FlavorFilter: printEnum {
 }
 
 class FilterViewModel: ObservableObject {
-    @Published var filteredListResults: [FlavorItem] = []
-    var filterSelected = Set<FlavorFilter>()
+    let flavorViewModel = FlavorViewModel()
+    @Published var filteredListResults: [FlavorItem]
+    var filtersSelected = Set<FlavorFilter>()
+
+    init() {
+        filteredListResults = flavorViewModel.allFlavors()
+    }
 
     func chocolateFilterSelected() {
-        if filterSelected.contains(FlavorFilter.chocolate) == false {
-            filterSelected.insert(FlavorFilter.chocolate)
+        if filtersSelected.contains(FlavorFilter.chocolate) == false {
+            filtersSelected.insert(FlavorFilter.chocolate)
         }
     }
 
@@ -53,7 +58,7 @@ class FilterViewModel: ObservableObject {
             filterSelected.insert(filterToCheck)
         }
  */
-        filterSelected.insert(filterToCheck)
+        filtersSelected.insert(filterToCheck)
         doFiltering()
     }
 
@@ -64,15 +69,15 @@ class FilterViewModel: ObservableObject {
             filterSelected.remove(filterToCheck)
         }
     */
-        filterSelected.remove(filterToCheck)
+        filtersSelected.remove(filterToCheck)
         doFiltering()
     }
 
     func checkFilter(filterToCheck: FlavorFilter, isChecked: Bool) {
         if isChecked {
-            filterSelected.insert(filterToCheck)
+            filtersSelected.insert(filterToCheck)
         } else {
-            filterSelected.remove(filterToCheck)
+            filtersSelected.remove(filterToCheck)
         }
         doFiltering()
     }
@@ -81,5 +86,11 @@ class FilterViewModel: ObservableObject {
         // set list results, which should be a published entity
         // list results should be a subset of all the flavors in the flavorViewModel list that match the
         // filter set criteria
+    }
+
+    private func setFilteredList() {
+        if filtersSelected.isEmpty {
+            filteredListResults = flavorViewModel.allFlavors()
+        }
     }
 }

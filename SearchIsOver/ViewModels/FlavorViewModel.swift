@@ -45,7 +45,11 @@ class FlavorViewModel {
         FlavorItem(id: 11, name: "Lemoncello", tags: [])
     ]
 
-    func allFlavors() -> [FlavorItem] {
+    func allFlavorsFromSet() -> [FlavorItem] {
         return Array(allFlavorsSet)
+    }
+
+    func allFlavors() -> [FlavorItem] {
+        return flavors
     }
 }

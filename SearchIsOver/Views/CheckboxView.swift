@@ -11,10 +11,12 @@ import SwiftUI
 
 struct CheckboxView: View {
     // TODO: Pass FilterViewModel into here
+    //@EnvironmentObject var filterViewModel: FilterViewModel
     @State var isChecked:Bool = false
     var flavorFilter: FlavorFilter
     func toggle() {
         isChecked = !isChecked
+        // this is where we call the appropriate function
     }
     var body: some View {
         Button(action: toggle){

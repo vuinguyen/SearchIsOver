@@ -91,6 +91,9 @@ class FilterViewModel: ObservableObject {
     private func setFilteredList() {
         if filtersSelected.isEmpty {
             filteredListResults = flavorViewModel.allFlavors()
+        } else {
+            // return results from the flavor array where the tag set == filtersSelected
+            filteredListResults = flavorViewModel.flavors.filter{ $0.tags == filtersSelected }
         }
     }
 }

@@ -10,11 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var filterViewModel: FilterViewModel
     var body: some View {
-        //Text("Hello, world!")
-        // .padding()
-        // TODO: Pass FilterViewModel into here
-        
-        //let flavorList = FlavorViewModel().allFlavors()
         let flavorList = filterViewModel.filteredListResults
         VStack(alignment: .leading) {
             FilterView()

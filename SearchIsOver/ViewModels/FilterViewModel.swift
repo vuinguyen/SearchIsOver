@@ -30,47 +30,12 @@ enum FlavorFilter: printEnum {
 }
 
 class FilterViewModel: ObservableObject {
-    let flavorViewModel = FlavorViewModel()
     @Published var filteredListResults: [FlavorItem]
+    let flavorViewModel = FlavorViewModel()
     var filtersSelected = Set<FlavorFilter>()
 
     init() {
         filteredListResults = flavorViewModel.allFlavors()
-    }
-
-    func chocolateFilterSelected() {
-        if filtersSelected.contains(FlavorFilter.chocolate) == false {
-            filtersSelected.insert(FlavorFilter.chocolate)
-        }
-    }
-
-    func coffeeFilterSelected() {
-
-    }
-
-    func fruitFilterSelected() {
-
-    }
-
-    func filterSelected(filterToCheck: FlavorFilter) {
-        /*
-        if filterSelected.contains(filterToCheck) == false {
-            filterSelected.insert(filterToCheck)
-        }
- */
-        filtersSelected.insert(filterToCheck)
-        doFiltering()
-    }
-
-    func filterDeselected(filterToCheck: FlavorFilter) {
-        // or use Sets?
-        /*
-        if filterSelected.contains(filterToCheck) {
-            filterSelected.remove(filterToCheck)
-        }
-    */
-        filtersSelected.remove(filterToCheck)
-        doFiltering()
     }
 
     func checkFilter(filterToCheck: FlavorFilter, isChecked: Bool) {
@@ -79,21 +44,18 @@ class FilterViewModel: ObservableObject {
         } else {
             filtersSelected.remove(filterToCheck)
         }
-        doFiltering()
-    }
-
-    func doFiltering(){
-        // set list results, which should be a published entity
-        // list results should be a subset of all the flavors in the flavorViewModel list that match the
-        // filter set criteria
+        setFilteredList()
     }
 
     private func setFilteredList() {
         if filtersSelected.isEmpty {
             filteredListResults = flavorViewModel.allFlavors()
         } else {
-            // return results from the flavor array where the tag set == filtersSelected
-            filteredListResults = flavorViewModel.flavors.filter{ $0.tags == filtersSelected }
+            // set list results, which should be a published entity
+            // list results should be a subset of all the flavors in the flavorViewModel list that match the
+            // filter set criteria
+            //filteredListResults = flavorViewModel.flavors.filter { $0.tags == filtersSelected }
+            filteredListResults = flavorViewModel.flavors.filter { $0.tags.isSuperset(of: filtersSelected) }
         }
     }
 }

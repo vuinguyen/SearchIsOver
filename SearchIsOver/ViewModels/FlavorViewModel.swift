@@ -11,7 +11,7 @@ import Foundation
 struct FlavorItem: Identifiable, Hashable {
     var id: Int
     var name: String
-    var tags: Set<FlavorFilter> // this can be an array of enums later
+    var tags: Set<FlavorFilter> 
 }
 
 class FlavorViewModel {

@@ -10,13 +10,12 @@
 import SwiftUI
 
 struct CheckboxView: View {
-    // TODO: Pass FilterViewModel into here
-    //@EnvironmentObject var filterViewModel: FilterViewModel
+    @EnvironmentObject var filterViewModel: FilterViewModel
     @State var isChecked:Bool = false
     var flavorFilter: FlavorFilter
     func toggle() {
         isChecked = !isChecked
-        // this is where we call the appropriate function
+        filterViewModel.checkFilter(filterToCheck: flavorFilter, isChecked: isChecked)
     }
     var body: some View {
         Button(action: toggle){
@@ -31,5 +30,6 @@ struct CheckboxView: View {
 struct CheckboxView_Previews: PreviewProvider {
     static var previews: some View {
         CheckboxView(isChecked: true, flavorFilter: FlavorFilter.chocolate)
+            .environmentObject(FilterViewModel())
     }
 }

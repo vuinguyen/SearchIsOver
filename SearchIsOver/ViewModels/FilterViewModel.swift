@@ -58,10 +58,8 @@ class FilterViewModel: ObservableObject {
             // set list results, which should be a published entity
             // list results should be a subset of all the flavors in the flavorViewModel list that match the
             // filter set criteria
-            //filteredListResults = flavorViewModel.flavors.filter { $0.tags == filtersSelected }
-            if filtersSelected.contains(.none) {
-                // we do something special
-                // we uncheck and grey out all the other filters on the UI
+            if noneFilterSelected {
+                // we grey out all the other filters on the UI
                 filteredListResults = flavorViewModel.flavors.filter { $0.tags == [] }
             } else {
                 filteredListResults = flavorViewModel.flavors.filter { $0.tags.isSuperset(of: filtersSelected) }

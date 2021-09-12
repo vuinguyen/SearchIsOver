@@ -15,14 +15,29 @@ struct CheckboxView: View {
     var flavorFilter: FlavorFilter
     func toggle() {
         isChecked = !isChecked
+        if flavorFilter == .none {
+            filterViewModel.noneFilterSelected = isChecked
+        }
         filterViewModel.checkFilter(filterToCheck: flavorFilter, isChecked: isChecked)
     }
     var body: some View {
-        Button(action: toggle){
-            HStack{
-                Image(systemName: isChecked ? "checkmark.square": "square")
-                Text(flavorFilter.description)
+        if flavorFilter != .none, filterViewModel.noneFilterSelected {
+            Button(action: toggle){
+                HStack{
+                    Image(systemName: isChecked ? "checkmark.square": "square")
+                    //Image(systemName: "square")
+                    Text(flavorFilter.description)
+                }
             }
+            .disabled(true)
+        } else {
+            Button(action: toggle){
+                HStack{
+                    Image(systemName: isChecked ? "checkmark.square": "square")
+                    Text(flavorFilter.description)
+                }
+            }
+            .disabled(false)
         }
     }
 }

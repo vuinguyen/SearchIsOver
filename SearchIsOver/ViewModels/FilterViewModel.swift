@@ -16,6 +16,7 @@ enum FlavorFilter: printEnum {
     case chocolate
     case coffee
     case fruit
+    case none
 
     var description: String {
         switch self {
@@ -25,12 +26,15 @@ enum FlavorFilter: printEnum {
             return "Coffee"
         case .fruit:
             return "Fruit"
+        case .none:
+            return "None of the Above"
         }
     }
 }
 
 class FilterViewModel: ObservableObject {
     @Published var filteredListResults: [FlavorItem]
+    @Published var noneFilterSelected = false
     let flavorViewModel = FlavorViewModel()
     var filtersSelected = Set<FlavorFilter>()
 
@@ -55,7 +59,13 @@ class FilterViewModel: ObservableObject {
             // list results should be a subset of all the flavors in the flavorViewModel list that match the
             // filter set criteria
             //filteredListResults = flavorViewModel.flavors.filter { $0.tags == filtersSelected }
-            filteredListResults = flavorViewModel.flavors.filter { $0.tags.isSuperset(of: filtersSelected) }
+            if filtersSelected.contains(.none) {
+                // we do something special
+                // we uncheck and grey out all the other filters on the UI
+                filteredListResults = flavorViewModel.flavors.filter { $0.tags == [] }
+            } else {
+                filteredListResults = flavorViewModel.flavors.filter { $0.tags.isSuperset(of: filtersSelected) }
+            }
         }
     }
 }

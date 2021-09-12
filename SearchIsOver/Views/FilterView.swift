@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct FilterView: View {
-    @EnvironmentObject var filterViewModel: FilterViewModel
+    //@EnvironmentObject var filterViewModel: FilterViewModel
     var body: some View {
         VStack(alignment: .leading) {
             CheckboxView(flavorFilter: FlavorFilter.chocolate)
             CheckboxView(flavorFilter: FlavorFilter.coffee)
             CheckboxView(flavorFilter: FlavorFilter.fruit)
-            //CheckboxView(isChecked: false, title: "None of the Above")
+            CheckboxView(flavorFilter: FlavorFilter.none)
         }
     }
 }

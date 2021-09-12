@@ -27,7 +27,8 @@ class FlavorViewModel {
         FlavorItem(id: 8, name: "Chocolate Coffee Espresso", tags: [.chocolate, .coffee]),
         FlavorItem(id: 9, name: "Chocolate Raspberry Coffee Espresso", tags: [.coffee, .chocolate, .fruit]),
         FlavorItem(id: 10, name: "Vanilla Bean Coffee Espresso", tags: [.coffee]),
-        FlavorItem(id: 11, name: "Lemoncello", tags: [.fruit])
+        FlavorItem(id: 11, name: "Lemoncello", tags: [.fruit]),
+        FlavorItem(id: 12, name: "Salted Caramel", tags: []),
     ]
 
     func allFlavors() -> [FlavorItem] {

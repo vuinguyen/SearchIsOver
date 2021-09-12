@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FilterView: View {
-    //@EnvironmentObject var filterViewModel: FilterViewModel
     var body: some View {
         VStack(alignment: .leading) {
             CheckboxView(flavorFilter: FlavorFilter.chocolate)
@@ -21,6 +20,6 @@ struct FilterView: View {
 
 struct FilterView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterView()
+        FilterView().environmentObject(FilterViewModel())
     }
 }

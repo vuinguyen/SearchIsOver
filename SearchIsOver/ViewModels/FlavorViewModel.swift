@@ -30,8 +30,4 @@ class FlavorViewModel {
         FlavorItem(id: 11, name: "Lemoncello", tags: [.fruit]),
         FlavorItem(id: 12, name: "Salted Caramel", tags: []),
     ]
-
-    func allFlavors() -> [FlavorItem] {
-        return flavors
-    }
 }

@@ -39,7 +39,7 @@ class FilterViewModel: ObservableObject {
     var filtersSelected = Set<FlavorFilter>()
 
     init() {
-        filteredListResults = flavorViewModel.allFlavors()
+        filteredListResults = flavorViewModel.flavors
     }
 
     func checkFilter(filterToCheck: FlavorFilter, isChecked: Bool) {
@@ -53,15 +53,18 @@ class FilterViewModel: ObservableObject {
 
     private func setFilteredList() {
         if filtersSelected.isEmpty {
-            filteredListResults = flavorViewModel.allFlavors()
+            filteredListResults = flavorViewModel.flavors
         } else {
-            // set list results, which should be a published entity
+            // set list results, which is a published entity
             // list results should be a subset of all the flavors in the flavorViewModel list that match the
-            // filter set criteria
-            if noneFilterSelected {
-                // we grey out all the other filters on the UI
+            // filter criteria
+            if filtersSelected.contains(.none) {
+                // NOTE: "if noneFilterSelected {" would work here too,
+                // but will stick with using filtersSelected for consistency
+                // return flavors where the search tags are empty
                 filteredListResults = flavorViewModel.flavors.filter { $0.tags == [] }
             } else {
+                // return flavors where the flavor's tags are contained in the filter criteria
                 filteredListResults = flavorViewModel.flavors.filter { $0.tags.isSuperset(of: filtersSelected) }
             }
         }

@@ -21,24 +21,14 @@ struct CheckboxView: View {
         filterViewModel.checkFilter(filterToCheck: flavorFilter, isChecked: isChecked)
     }
     var body: some View {
-        if flavorFilter != .none, filterViewModel.noneFilterSelected {
-            Button(action: toggle){
-                HStack{
-                    Image(systemName: isChecked ? "checkmark.square": "square")
-                    //Image(systemName: "square")
-                    Text(flavorFilter.description)
-                }
+        let noneFilterSelectedFlag = flavorFilter != .none && filterViewModel.noneFilterSelected
+        Button(action: toggle){
+            HStack{
+                Image(systemName: isChecked ? "checkmark.square": "square")
+                Text(flavorFilter.description)
             }
-            .disabled(true)
-        } else {
-            Button(action: toggle){
-                HStack{
-                    Image(systemName: isChecked ? "checkmark.square": "square")
-                    Text(flavorFilter.description)
-                }
-            }
-            .disabled(false)
         }
+        .disabled(noneFilterSelectedFlag)
     }
 }
 

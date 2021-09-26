@@ -10,9 +10,9 @@ import SwiftUI
 struct FilterView: View {
     var body: some View {
         VStack(alignment: .leading) {
+            CheckboxView(flavorFilter: FlavorFilter.fruit)
             CheckboxView(flavorFilter: FlavorFilter.chocolate)
             CheckboxView(flavorFilter: FlavorFilter.coffee)
-            CheckboxView(flavorFilter: FlavorFilter.fruit)
             CheckboxView(flavorFilter: FlavorFilter.none)
         }
     }

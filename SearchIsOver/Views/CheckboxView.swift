@@ -24,7 +24,7 @@ struct CheckboxView: View {
         let noneFilterSelectedFlag = flavorFilter != .none && filterViewModel.noneFilterSelected
         Button(action: toggle){
             HStack{
-                Image(systemName: isChecked ? "checkmark.square": "square")
+                Image(systemName: (isChecked && !noneFilterSelectedFlag) ? "checkmark.square": "square")
                 Text(flavorFilter.description)
             }
         }

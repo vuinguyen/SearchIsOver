@@ -17,6 +17,7 @@ All Flavors Are Displayed (No Filters Selected):
 ![No filters selected](/screenshots/AllFlavorsDisplayed.png)
 
 A Single Filter is Selected:
+
 ![Single filter selected](/screenshots/FruitFilterSelected.png)  
 
 All Filters Selected Except for the "None" Filter:

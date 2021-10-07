@@ -12,11 +12,17 @@ I gave a talk on this project at [DevCommunity Summit](https://devcommunitysummi
 [Slides](https://speakerdeck.com/vuinguyen/the-search-is-over-devcommunity-summit-2021) for this project and my talk
 
 ### Sample Screenshots:
+All Flavors Are Displayed (No Filters Selected):
 
-![No filters selected](/screenshots/AllExceptNoneFiltersSelected.png)
+![No filters selected](/screenshots/AllFlavorsDisplayed.png)
 
+A Single Filter is Selected:
 ![Single filter selected](/screenshots/FruitFilterSelected.png)  
 
+All Filters Selected Except for the "None" Filter:
+
 ![All filters except None selected](/screenshots/AllExceptNoneFiltersSelected.png)
+
+"None of the Above Filter" Selected:
 
 ![None filter selected](/screenshots/NoneFilterSelected.png)
